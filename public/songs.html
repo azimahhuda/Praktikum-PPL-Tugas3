@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Lagu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daftar Lagu</h1>
+        </header>
+        
+        <main>
+            <table class="song-table">
+                <thead>
+                    <tr>
+                        <th>Penyanyi</th>
+                        <th>Judul Lagu</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="songTableBody"></tbody>
+            </table>
+
+            <section class="form-section">
+                <h2>Tambah Lagu Baru</h2>
+                <form id="addSongForm">
+                    <div class="form-group">
+                        <input type="text" id="penyanyi" placeholder="Penyanyi" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="judul" placeholder="Judul Lagu" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="genre" placeholder="Genre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="penulis" placeholder="Penulis" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="tahun" placeholder="Tahun" required>
+                    </div>
+                    <button type="submit" class="main-btn">Tambah Lagu</button>
+                </form>
+            </section>
+
+            <section id="editSongForm" class="form-section" style="display: none;">
+                <h2>Edit Lagu</h2>
+                <div class="form-group">
+                    <input type="hidden" id="editId">
+                    <input type="text" id="editPenyanyi" placeholder="Penyanyi">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editJudul" placeholder="Judul Lagu">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editGenre" placeholder="Genre">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="editPenulis" placeholder="Penulis">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="editTahun" placeholder="Tahun">
+                </div>
+                <button id="saveEditButton" type="button" class="main-btn">Simpan Perubahan</button>
+                <button type="button" class="cancel-btn" onclick="cancelEdit()">Batal</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Database Lagu Sederhana. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

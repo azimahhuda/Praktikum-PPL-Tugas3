@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Lagu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Detail Lagu</h1>
+    
+    <div id="songDetail">
+        <p>Memuat data lagu...</p>
+    </div>
+
+    <button onclick="goBack()">Kembali</button>
+
+    <script>
+        async function fetchSongDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const songId = urlParams.get("id");
+
+            if (!songId) {
+                document.getElementById("songDetail").innerText = "Lagu tidak ditemukan.";
+                return;
+            }
+
+            try {
+                const response = await fetch(`/songs/${songId}`);
+                if (!response.ok) throw new Error("Lagu tidak ditemukan.");
+
+                const song = await response.json();
+                document.getElementById("songDetail").innerHTML = `
+                    <p><strong>Penyanyi:</strong> ${song.penyanyi}</p>
+                    <p><strong>Judul:</strong> ${song.judul}</p>
+                    <p><strong>Genre:</strong> ${song.genre}</p>
+                    <p><strong>Penulis:</strong> ${song.penulis}</p>
+                    <p><strong>Tahun:</strong> ${song.tahun}</p>
+                `;
+            } catch (error) {
+                document.getElementById("songDetail").innerText = "Terjadi kesalahan saat mengambil data.";
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        fetchSongDetail();
+    </script>
+</body>
+</html>

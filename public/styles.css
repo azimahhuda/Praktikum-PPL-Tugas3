@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+header h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Table Styles */
+.song-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.song-table th, .song-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.song-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.song-table tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+.song-table tr:hover {
+    background-color: #d0e6f7;
+}
+
+.song-table td button {
+    padding: 8px 12px;
+    border: none;
+    color: rgb(8, 8, 8);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.song-table td button.edit-btn {
+    background-color: #2ecc71;
+}
+
+.song-table td button.delete-btn {
+    background-color: #e74c3c;
+}
+
+/* Form Styles */
+.form-section {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.main-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #2980b9;
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .song-table th, .song-table td {
+        font-size: 14px;
+    }
+
+    .main-btn, .cancel-btn {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
